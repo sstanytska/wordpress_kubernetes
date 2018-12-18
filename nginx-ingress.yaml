@@ -1,19 +1,14 @@
-apiVersion: extensions/v1beta1  
+apiVersion: extensions/v1beta1
 kind: Ingress
-metadata:  
+metadata:
   name: nginx-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
-    nginx.org/ssl-services: "wordpress"
-  labels:
-    app: wordpress
-spec:  
+spec:
   tls:
-    - hosts:
-      - minikube.io
-      secretName: tls-certificate
+  - hosts:
+    - foo.bar.com
+    secretName: tls-sertificate
   rules:
-  - host: minikube.io
+  - host: foo.bar.com
     http:
       paths:
       - path: /
